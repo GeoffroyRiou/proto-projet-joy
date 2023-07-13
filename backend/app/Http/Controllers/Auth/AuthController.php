@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 
-class AuthController extends Controller
+abstract class AuthController extends Controller
 {
     /**
      * @param  array<string,mixed >  $data
