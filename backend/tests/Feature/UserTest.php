@@ -36,10 +36,35 @@ test('Should login', function () {
         'success',
         'message',
         'data' => [
-            'user',
+            'user' => [
+                'id',
+                'name',
+            ],
         ],
         'accessToken',
     ]);
 
     $this->assertAuthenticatedAs($user);
-})->only();
+});
+
+test('Should logout', function () {
+    $user = User::factory()->create([
+        'name' => 'Test User',
+        'email' => 'test@test.fr',
+        'password' => bcrypt('test'),
+    ]);
+    $token = $user->createToken('dummy');
+
+    $response = $this->withHeaders(['Authorization' => 'Bearer '.$token->plainTextToken])->json('get', route('api.auth.logout'));
+
+    $response->assertStatus(200);
+    $response->assertJson([
+        'success' => true,
+        'message' => 'Good bye',
+        'data' => [],
+    ]);
+
+    $user->refresh();
+
+    expect(count($user->tokens))->toBe(0);
+});

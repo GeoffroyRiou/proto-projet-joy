@@ -16,7 +16,6 @@ class AuthLoginController extends AuthController
 
         // Tentative de login
 
-
         // Succès
         if (Auth::attempt($credentials)) {
 
