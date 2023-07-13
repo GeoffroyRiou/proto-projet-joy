@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\Auth\AuthLogoutController;
+use App\Http\Controllers\WorkTool\IndexController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/login', AuthLoginController::class)->name('api.auth.login');
+
+Route::get('/worktools', IndexController::class)->name('worktools.index');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
