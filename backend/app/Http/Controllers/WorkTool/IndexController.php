@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\WorkTool;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use App\Models\WorkTool;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class IndexController extends ApiController
 {
     /**
      * Handle the incoming request.

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 
-abstract class AuthController extends Controller
+abstract class ApiController extends Controller
 {
     /**
      * @param  array<string,mixed >  $data

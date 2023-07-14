@@ -22,6 +22,7 @@ class WorkTool extends Model
         'ages',
         'skills',
         'type',
+        'user_id',
     ];
 
     public function user(): BelongsTo

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class AuthLogoutController extends AuthController
+class AuthLogoutController extends ApiController
 {
     /**
      * Handle the incoming request.

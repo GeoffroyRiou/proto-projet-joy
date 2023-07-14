@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('work_tools', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('category');
             $table->string('ages');
             $table->string('skills');

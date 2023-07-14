@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\Auth\AuthLogoutController;
 use App\Http\Controllers\WorkTool\IndexController;
+use App\Http\Controllers\WorkTool\StoreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', AuthLoginController::class)->name('api.auth.login');
 
-Route::get('/worktools', IndexController::class)->name('worktools.index');
+Route::get('/worktools', IndexController::class)->name('api.worktools.index');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
@@ -28,4 +29,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+
+    Route::post('/worktools/store', StoreController::class)->name('api.worktools.store');
 });
